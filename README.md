@@ -1,13 +1,20 @@
+This is entirely based on the work of https://github.com/potch
+------------------------------------------------------------------------
+Install:
 
-```
-% npm install -g flight-status
-% flight UAL903
+npm install flightinfo
 
-En Route / On Time
-Departure: 02:51PM PDT
-Arrival:   09:46AM CEST (+1)
+------------------------------------------------------------------------
+Usage example:
 
-[-------------✈                                     ]
-2 hr 36 min elapsed, 7 hr 18 min remaining
+var flight = require('./index.js');
+var async = require('async');
 
-```
+flight.flightinfo('ARG1303',response)
+
+function response(result){
+    console.log('Status ' + result.status);
+	  console.log('Departed ' + result.origin + ' at ' + result.departure);
+	  console.log('Arrival ' + result.arrival + ' at ' + result.destination);     
+	  console.log(result.progress);
+}
