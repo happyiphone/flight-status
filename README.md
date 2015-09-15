@@ -7,9 +7,7 @@ Install:
 ------------------------------------------------------------------------
 Usage example:
 
-	var flight = require('./index.js');
-	var async = require('async');
-	
+	var flight = require('flightinfo');
 	flight.flightinfo('ARG1303',response)
 	
 	function response(result){
